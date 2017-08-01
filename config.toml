@@ -1,0 +1,23 @@
+baseurl = "https://husic.de/rijeka/"
+languageCode = "de-de"
+title = "Studio Rijeka"
+canonifyUrls = "true"
+theme = "landing-page-hugo"
+
+[params]
+    description = "Studio Rijeka, im Stadtteil Krimeja"
+    custom_css = ["css/local.css"]
+    faviconUrl = "favicon-university.ico"
+
+[[params.social]]
+    title = "email"
+    icon = "envelope-o"
+    url = "mailto:studio-rijeka@husic.de?subject=Anfrage%20Studio%20Rijeka"
+[[params.social]]
+    title = "airbnb"
+    icon = "bed"
+    url = "https://www.airbnb.de/rooms/7867688"
+[[params.social]]
+    title = "reviews"
+    icon = "comments-o"
+    url = "https://www.airbnb.de/rooms/7867688#reviews"
