@@ -10,7 +10,7 @@ theme = "landing-page-hugo"
     faviconUrl = "favicon-university.ico"
 
 [[params.social]]
-    title = "email"
+    title = "kontakt"
     icon = "envelope-o"
     url = "https://www.airbnb.de/rooms/7867688#host-profile"
 [[params.social]]
