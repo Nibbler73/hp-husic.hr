@@ -12,7 +12,7 @@ theme = "landing-page-hugo"
 [[params.social]]
     title = "email"
     icon = "envelope-o"
-    url = "mailto:studio-rijeka@apartment-in-rijeka.com?subject=Anfrage%20Studio%20Rijeka"
+    url = "https://www.airbnb.de/rooms/7867688#host-profile"
 [[params.social]]
     title = "airbnb"
     icon = "bed"

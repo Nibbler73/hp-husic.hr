@@ -5,6 +5,8 @@ title = "Über das Studio Rijeka"
 
 +++
 
+{{< airbnb >}}
+
 Komplett renoviertes klimatisiertes Appartement, Flur mit Garderobe, ein Duschbad und einen Wohnraum mit neuer Küche, Waschmaschine, Schreibtisch/Esstisch, Schuh- und Kleiderschrank, HD Fernseher und einem gemütlichen Queen Size Bed mit medizinischer 7-Zonen-Matratze.
 
 
