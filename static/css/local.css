@@ -2,3 +2,6 @@
 	background-color: #f8f8f8;
 }
 
+body > footer > div > div > div.col-md-4, body > footer > div > div > div.col-md-4 > a {
+	color: lightgrey;
+}
