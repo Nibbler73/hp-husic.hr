@@ -2,7 +2,7 @@ language: go
 go:
 - 1.4
 install:
-- go get github.com/spf13/hugo
+- go get github.com/gohugoio/hugo
 script: hugo
 env:
   global:
