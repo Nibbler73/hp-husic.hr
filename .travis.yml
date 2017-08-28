@@ -1,0 +1,13 @@
+language: go
+go:
+- 1.4
+install:
+- go get github.com/spf13/hugo
+script: hugo
+env:
+  global:
+  - secure: KG+EkS5jntFLMlWX7JmVGa1uHdItITaQE1CNUNP1GiAULOCWkSAsyQ+CKTPAEaONhxA/RXLmDITlxm0FhxJK/ka0kkxFKFjaCe7yehztOiYtKXvBipLZqiDN3aLZr5dP4nFqZhlrRGqXo2sihtVZWwy4MDLg3i1KAueU+XG0CDtoU4ISZx6m5YnRni8o8h9dA0yj1Q/8h1RFc+RKthrT/5IS6vM3e84udkr7SKwdTJdSYISt71GJnBTrKVuoSmXRGbGIsYZ8k0CglQkbnQlTSUSHImZkP4CzxED5AJzqK/7tW2Ce+TdTDrv4YN8R6S6F6hyhRaulfoZ/G7yEKTSi0hKX2s/TOTAoOs7jGRwoFEHvLVd3LVzbLbhbkxo6QI/Xlv18Wvs1mLHxtBxX0Fl/zOX7rlPBWv1CPm3ZOuuOUCaWivWXTsZezA0mcqw77DxrwUf6QZTx7zI+NDHZ9yurEziLY9yzu/qEaI7OCl4RAqoyqAn0QWOWWCsKdMSlCo83xqNnx+dlNJ8B4WauC6erj2OoWG/c5dzWfORYzkjDcVzMIom6zt7ozUkcR9sk0w889eOomGs84U4tTdqVtpPujzypwpUdaRmW4/ROZaCjXX1Muk7B+2tXgloycSFWgOCHkxEUTuS9vPg6eQUjgiJbI5aOCg5Q4ijsST3aR93ugTs=
+  - secure: NicjqQs+pXEdjV2m6T9CzxWC7DgdaXT7Q3gM688DkfCbEFm4h52SImln1nbJv+mpBLc8rnSwYcXp9uGRWE9XTRPeF/+zx3uVPByeHfoaBpjrwWizFzCDuqVNvTnlxf5TKkAb2Q6Lz0ml3AJ68q6s5XUN73+EiNoR/hOC33hjrvMCOz/+vy0DNv9/j+61RwEz+Oc+qVT71fho5LAHLMJ0pfol1ZFaZ8merCva8KYDrheb11XMdgDZj+RHRlIQPCA0R8LbOGNvWEkrVSHVl2YP2dcf+9y/1Tka+Q5YXJkZZFC8wKm2feLGvZdSs/vy+kpc0/XjZMfLkzEyeJJY9jCO+ar7rVdL40GQRUBSXv1Ze7GbKdNSAa9VAIep+aQl3xDtefHiHuWQNN/AbZlh0MYfkS5C2M/LoNKcEbbeS4ip4satjo9LddpohGH6O/PfTBfp2U6r7DCz9+RHrohd17sb/9hqsPv5zcMIztvFFfEItzVyHv0CJj5rMXoL16ZihyIrlEBm0wKwqEPfd1/1G/0Nh00IugGaKXtQk+M1gYlKBSa4TPj3mlsx8VzbAnVuOMzJYgoNwTZcZtXF0BO9Uj+YtFy+piBKbtr5QMKz1MziinEpHhpfm6pCEGwp7U6xh5PrRNk0dvsA4Pz+DvdoDB+nfHRee3J2ZTXkZiWDVWqx1So=
+after_success:
+    "find public/ -type f -exec curl --ftp-ssl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://w014d5e9.kasserver.com/{}"
+
