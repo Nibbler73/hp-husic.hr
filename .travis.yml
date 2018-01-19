@@ -4,6 +4,7 @@ go:
 install:
 - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.33/hugo_0.33_Linux-64bit.deb
 - sudo dpkg -i /tmp/hugo.deb
+- sudo apt-get install -y lftp
 script: hugo
 env:
   global:
@@ -11,5 +12,5 @@ env:
   - secure: NicjqQs+pXEdjV2m6T9CzxWC7DgdaXT7Q3gM688DkfCbEFm4h52SImln1nbJv+mpBLc8rnSwYcXp9uGRWE9XTRPeF/+zx3uVPByeHfoaBpjrwWizFzCDuqVNvTnlxf5TKkAb2Q6Lz0ml3AJ68q6s5XUN73+EiNoR/hOC33hjrvMCOz/+vy0DNv9/j+61RwEz+Oc+qVT71fho5LAHLMJ0pfol1ZFaZ8merCva8KYDrheb11XMdgDZj+RHRlIQPCA0R8LbOGNvWEkrVSHVl2YP2dcf+9y/1Tka+Q5YXJkZZFC8wKm2feLGvZdSs/vy+kpc0/XjZMfLkzEyeJJY9jCO+ar7rVdL40GQRUBSXv1Ze7GbKdNSAa9VAIep+aQl3xDtefHiHuWQNN/AbZlh0MYfkS5C2M/LoNKcEbbeS4ip4satjo9LddpohGH6O/PfTBfp2U6r7DCz9+RHrohd17sb/9hqsPv5zcMIztvFFfEItzVyHv0CJj5rMXoL16ZihyIrlEBm0wKwqEPfd1/1G/0Nh00IugGaKXtQk+M1gYlKBSa4TPj3mlsx8VzbAnVuOMzJYgoNwTZcZtXF0BO9Uj+YtFy+piBKbtr5QMKz1MziinEpHhpfm6pCEGwp7U6xh5PrRNk0dvsA4Pz+DvdoDB+nfHRee3J2ZTXkZiWDVWqx1So=
   - secure: KivLNS/W07zUczc1yGLZW100aAeI/6IkRSoYpBGPAL+JnDvmMjwpEB7+291Yn5o1f1yTErPp9yWXrIzd566admwuZWwBlChdpOr/9AVeLoezGG9NukmcX98HaGZHsCh2kAoRB5XDuOdOVEdjbvS6D4qF02CkEK3tl94c6L6sSojnoiQUggGqbp/QQWJjol1QHaWidVOEH0fSR2fhGQKxPZHl5BMhrl7blrxlIoccDDL1Eixxikk4QgAvzRJxy9xUABENlytzqNme47YLsrbpp/mHJQS0AfbObPmq/Noyu0biXRhvzvqLcZ+MONAEVY33rZHXVBCvjezf4qclDLPuDRK5C6tyEfDjuTTWXQWpPYlk0evDiEEFWITv8yese5dLW+bfG8VanNXXKVIHPtxq8hfDsDalOUdBFQ546v9/rZzjhgaiEFm3awRtzN1I8uIkwHB5BNXE9D2mP07nOYJKF07k01e4ZkgqKRznSJqAGeg8Dkgiv/oc94t8T2HpTUUDudZc4TLzto8EZy4jaJV7Z19oMzKYqVpD9MTOEi40xqmtYTVxOTSJDjwQrIiY8TkgKGgqbxo7gnPftMt6JMfpSo+Hi0W4V3DWm38MM/aofMvfmt8d6TXY/BaPdJPmFlyTERlfxOPnbUVVt7n42fHyF3DANCsPGz3t35eUKEJJtF4=
 after_success:
-    "cd public/ && find ./ -type f -exec curl --ftp-ssl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_SERVER/{} ';'"
+    "lftp -c \"set ftps:initial-prot ''; set ftp:ssl-force true; set ftp:ssl-protect-data true; open ftp://$FTP_USER:$FTP_PASSWORD@$FTP_SERVER:21; mirror -eRv public .; quit;\""
 
