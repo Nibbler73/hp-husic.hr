@@ -4,7 +4,7 @@
 {{ $ratingWidth := mul ( div 112.0 5 ) $rating}}
 
 <div style="width: 100%; align-content: center;">
-    {{ .Get "count" }} Bewertungen
+    Über {{ .Get "count" }} Bewertungen
     <div id="bgStars" style="overflow:hidden; width: 112px; height: 20px; background-image: url(img/star_template.png); background-position-y: 0px; display: inline-block;">
             <div id="fgStars" style="overflow:hidden; position: absolute; width: {{$ratingWidth}}px; height: 20px; background-image: url(img/star_template.png); background-position-y: 20px;">
             </div>
