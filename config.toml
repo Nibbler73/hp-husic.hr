@@ -21,3 +21,7 @@ theme = "landing-page-hugo"
     title = "reviews"
     icon = "comments-o"
     url = "https://www.airbnb.de/rooms/7867688#reviews"
+[[params.social]]
+    title = "datenschutz"
+    icon = "user-secret"
+    url = "https://www.airbnb.de/terms/privacy_policy"
