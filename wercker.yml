@@ -21,18 +21,18 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     # We have to fetch Git submodules manually.
-    #- script:
-    #    name: install git
-    #    code: |
-    #        apt-get update
-    #        apt-get install git -y
-    #- script:
-    #    name: initialize git submodules
-    #    code: |
-    #        git submodule update --init --recursive
+    - script:
+        name: install git
+        code: |
+            apt-get update
+            apt-get install git -y
+    - script:
+        name: initialize git submodules
+        code: |
+            git submodule update --init --recursive
     - arjen/hugo-build@1.29.1:
-      #version: "0.18.1"
-      theme: landing-page-hugo
+        #version: "0.18.1"
+        theme: landing-page-hugo
 deploy:
   steps:
     - script:
