@@ -4,6 +4,7 @@ draft = false
 title = "Über das Studio Rijeka"
 
 +++
+{{< analytics setSiteId="2" >}}
 
 {{< rating count="100" rating="4.5" >}}
 
